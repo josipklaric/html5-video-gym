@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+    <title>HTML5 Video - Basic example</title>
+</head>
+<body>
+    <div class="main-grid container-fluid">
+        <header>
+            <div class="jumbotron">HTML5 Video</div>
+        </header>
+        <div class="left-nav">
+            <ul>
+                <li><a href="01_basic.html">Basic example</a></li>
+                <li><a href="02_camera.html">Camera example</a></li>
+                <li><a href="03_subtitles.html">Subtitles example</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div id="theater" style="width: 1280px; height: 720px; overflow: hidden;">
+                <video id="video" src="videos/sintel-short.mp4" controls='false' style="width: 100%;"></video>
+                <canvas id="canvas"></canvas>
+                <label>
+                    <br />Try to play me :)</label>
+                <br />
+            </div>
+        </div>
+        <div class="right-col"> 
+            right 
+        </div>
+        <footer>
+            footer
+        </footer>
+    </div>
+    <script>
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        var video = document.getElementById('video');
+
+        // set canvas size = video size when known
+        video.addEventListener('loadedmetadata', function() {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            console.log('metadata loaded');
+        });
+
+        video.addEventListener('play', function() {
+            console.log('play pressed...');
+            var $this = this; //cache
+            (function loop() {
+                console.log('inside loop');
+                if (!$this.paused && !$this.ended) {
+                    ctx.drawImage($this, 0, 0);
+                    setTimeout(loop, 1000 / 30); // drawing at 30fps
+                }
+            })();
+        }, 0);
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "html5-video-gym",
+  "version": "1.0.0",
+  "description": "Experimenting with HTML5 video",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josipklaric/html5-video-gym.git"
+  },
+  "keywords": [
+    "HTML5",
+    "video"
+  ],
+  "author": "Josip Klaric",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josipklaric/html5-video-gym/issues"
+  },
+  "homepage": "https://github.com/josipklaric/html5-video-gym#readme",
+  "dependencies": {
+    "bootstrap": "^4.0.0"
+  }
+}

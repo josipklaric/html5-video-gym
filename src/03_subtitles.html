@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Video - Subtitles example</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv-printshiv.min.js" type="text/javascript"></script><![endif]-->
+</head>
+<body>
+    <div class="main-grid container-fluid">
+        <header>
+            <div class="jumbotron">HTML5 Video with subtitles</div>
+        </header>
+        <div class="left-nav">
+            <ul>
+                <li><a href="01_basic.html">Basic example</a></li>
+                <li><a href="02_camera.html">Camera example</a></li>
+                <li><a href="03_subtitles.html">Subtitles example</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <h1>Video with subtitles example</h1>
+            <div id="theater" style="width: 1280px; height: 720px; overflow: hidden;">
+                <video id="video" controls="true">
+                    <source src="videos/sintel_trailer-720p.mp4" type="video/mp4">
+                    <source src="videos/sintel_trailer-720p.ogv" type="video/ogv">
+                    <track label="English" kind="subtitles" srclang="en" src="subtitles/sintel-en.vtt" default>
+                    <track label="Hrvatski" kind="subtitles" srclang="hr" src="subtitles/sintel-hr.vtt">
+                </video>
+                <div id="controls">
+    
+                </div>
+            </div>
+        </div>
+    <div class="right-col">
+        right column
+    </div>
+    <footer>
+        footer area
+    </footer>
+</body>
+</html>
