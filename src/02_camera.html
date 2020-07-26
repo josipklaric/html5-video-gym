@@ -92,7 +92,8 @@
                 video: true,
                 audio: false
             }, function(stream){
-                video.src = videoUrl.createObjectURL(stream);
+                //video.src = videoUrl.createObjectURL(stream);
+                video.srcObject = stream;
                 video.play();
             }, function(error){
                 // error occurred
